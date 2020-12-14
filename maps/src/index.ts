@@ -1,11 +1,6 @@
 // import { Company } from './Company';
 // import { User } from './User';
+import { CustomMap } from './CustomMap';
 
-const mapDiv = document.querySelector('#map');
-new google.maps.Map(mapDiv, {
-  zoom: 2,
-  center: {
-    lat: 0,
-    lng: 0
-  }
-})
+const customMap = new CustomMap();
+
