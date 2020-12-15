@@ -9,6 +9,8 @@ export class CustomMap {
 
   constructor() {
     this.googleMap = new google.maps.Map(document.querySelector('#map'), {
+  constructor(divId: string) {
+    this.googleMap = new google.maps.Map(document.querySelector(`#${divId}`), {
       zoom: 2,
       center: {
         lat: 0,
