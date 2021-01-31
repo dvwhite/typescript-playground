@@ -8,4 +8,15 @@ const matches = fs.readFileSync('football.csv', {
   return row.split(',');
 });
 
-console.log(matches)
+// Tabulate the number of Manchester United wins
+let manUnitedWins = 0;
+
+for (let match of matches) {
+  if (match[1] == 'Man United' && match[5] == 'H') {
+    manUnitedWins++;
+  } else if (match[2] == 'Man United' && match[5] == 'A') {
+    manUnitedWins++;
+  }
+}
+
+console.log("Man United wins: " + manUnitedWins);
