@@ -8,7 +8,7 @@ export class LinkedList {
   head: Node | null = null;
 
   add(data: number): void {
-    const node = new Node(1);
+    const node = new Node(data);
 
     if (!this.head) {
       this.head = node;
