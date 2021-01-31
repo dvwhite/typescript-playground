@@ -1,20 +1,26 @@
-import fs from 'fs';
+import { CsvFileReader } from './CsvFileReader';
 
-const matches = fs.readFileSync('football.csv', {
-  encoding: 'utf-8'
-})
-.split('\n')
-.map((row: string): string[] => {
-  return row.split(',');
-});
+// Enum imports
+import { MatchResult } from './MatchResult';
 
-// Tabulate the number of Manchester United wins
+// Open the file and read the data
+const reader = new CsvFileReader('football.csv');
+reader.read();
+
+
+
 let manUnitedWins = 0;
 
-for (let match of matches) {
-  if (match[1] == 'Man United' && match[5] == 'H') {
+for (let match of reader.data) {
+  // Game data
+  const homeTeam = match[1];
+  const awayTeam = match[2];
+  const matchResult = match[5];
+
+  // Calculate the total wins
+  if (homeTeam == 'Man United' && matchResult == MatchResult.HomeWin) {
     manUnitedWins++;
-  } else if (match[2] == 'Man United' && match[5] == 'A') {
+  } else if (awayTeam == 'Man United' && matchResult == MatchResult.AwayWin) {
     manUnitedWins++;
   }
 }
