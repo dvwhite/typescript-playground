@@ -1,0 +1,23 @@
+.App {
+  text-align: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  width: 8%;
+  padding: 0.5%;
+  margin: 1%;
+}
+
+.counter {
+  width: 7%;
+  padding: 0.5%;
+  margin: 1%;
+  background-color: #333;
+  color: white;
+  text-align: center;
+}
