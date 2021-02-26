@@ -4,12 +4,12 @@ import { dateStringtToDate } from './utils';
 // Enum imports
 import { MatchResult } from './MatchResult';
 
-// Tuples
-type MatchData = [Date, string, string, number, number, MatchResult];
+// Tuple imports
+import { MatchData } from './MatchData';
 
 interface DataReader {
-  read(): void
-  data: string[][]
+  read(): void;
+  data: string[][];
 }
 
 export class MatchReader {
@@ -27,8 +27,9 @@ export class MatchReader {
           row[2], // Away team
           parseInt(row[3]), // Home goals scored
           parseInt(row[4]), // Away goals scored
-          row[5] as MatchResult // Match result
-        ]
-      });
+          row[5] as MatchResult, // Match result
+        ];
+      }
+    );
   }
 }
