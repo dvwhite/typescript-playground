@@ -12,5 +12,7 @@ export interface OutputTarget {
 export class Summary {
   constructor(public analyzer: Analyzer, public outputTarget: OutputTarget) {}
 
-  buildAndPrintReport(matchData: MatchData[]) {}
+  buildAndPrintReport(matchData: MatchData[]) {
+    
+  }
 }
